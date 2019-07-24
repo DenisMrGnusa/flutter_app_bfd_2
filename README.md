@@ -2,6 +2,8 @@
 
 Testing, JSON serialization, and immutables (The Boring Flutter Development Show, Ep. 2)
 
+the training project from the results of following the video => https://youtu.be/TiCA0CEePyE
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

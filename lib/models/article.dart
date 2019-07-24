@@ -1,5 +1,7 @@
 import 'dart:convert';
+import 'package:http/http.dart' as http;
 
+//it's like mongoose schema, the function is to immutable data
 class Article {
   final String text;
   final String url;
@@ -26,6 +28,16 @@ class Article {
       score: json["score"],
     );
   }
+}
+
+//get data from API endpoint (dummies)
+Future<Article> fetchData(http.Client client) async {
+  dynamic response = await client.get('https://hacker-news.firebaseio.com/v0/item/8863.json',
+  ).timeout(const Duration(seconds: 5));
+  final parsed = json.decode(response.body);
+  Article article = Article.fromJson(parsed);
+  return article;
+
 }
 
 List<int> parseTopStories(String jsonStr){
